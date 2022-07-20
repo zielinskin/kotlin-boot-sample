@@ -12,11 +12,11 @@ class SampleService(
         return sampleRepository.findAll()
     }
 
-    fun findById(id: Integer) : SampleEntity {
+    fun findById(id: Int) : SampleEntity {
         return sampleRepository.getReferenceById(id)
     }
 
-    fun findByIds(ids : List<Integer>) : List<SampleEntity> {
+    fun findByIds(ids : List<Int>) : List<SampleEntity> {
         return sampleRepository.findByIdIn(ids)
     }
 

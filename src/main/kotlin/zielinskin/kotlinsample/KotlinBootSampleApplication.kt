@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import zielinskin.kotlinsample.data.SampleEntity
 
 @SpringBootApplication
-@EntityScan(basePackageClasses = [SampleEntity::class])
 @EnableJpaRepositories
 class KotlinBootSampleApplication
 

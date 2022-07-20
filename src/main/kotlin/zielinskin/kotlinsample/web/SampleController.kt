@@ -19,12 +19,12 @@ class SampleController(
     }
 
     @GetMapping("/{id}")
-    fun findById(id: Integer) : SampleEntity {
+    fun findById(id: Int) : SampleEntity {
         return sampleService.findById(id)
     }
 
     @PostMapping
-    fun findByIds(ids : List<Integer>) : List<SampleEntity> {
+    fun findByIds(ids : List<Int>) : List<SampleEntity> {
         return sampleService.findByIds(ids)
     }
 

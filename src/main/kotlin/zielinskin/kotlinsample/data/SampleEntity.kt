@@ -10,6 +10,6 @@ import javax.persistence.Id
 data class SampleEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Integer? = null,
+    var id: Int? = null,
     var name: String
 )
