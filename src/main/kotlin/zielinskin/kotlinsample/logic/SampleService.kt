@@ -13,7 +13,7 @@ class SampleService(
     }
 
     fun findById(id: Int) : SampleEntity {
-        return sampleRepository.getReferenceById(id)
+        return sampleRepository.getOne(id)
     }
 
     fun findByIds(ids : List<Int>) : List<SampleEntity> {
