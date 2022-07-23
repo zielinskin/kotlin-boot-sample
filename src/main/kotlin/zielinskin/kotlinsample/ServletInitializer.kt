@@ -1,12 +1,14 @@
 package zielinskin.kotlinsample
 
-import org.springframework.boot.builder.SpringApplicationBuilder
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+import org.springframework.boot.SpringApplication
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
-class ServletInitializer : SpringBootServletInitializer() {
+@SpringBootApplication
+@EnableJpaRepositories
+class ServletInitializer
 
-	override fun configure(application: SpringApplicationBuilder): SpringApplicationBuilder {
-		return application.sources(KotlinBootSampleApplication::class.java)
-	}
-
+fun main(args: Array<String>) {
+    SpringApplication.run(ServletInitializer::class.java, *args)
 }
+

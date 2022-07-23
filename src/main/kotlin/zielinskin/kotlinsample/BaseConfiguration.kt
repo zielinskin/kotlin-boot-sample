@@ -14,6 +14,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 @Configuration
 @EnableSwagger2
 class BaseConfiguration : WebMvcConfigurer {
+    //without this, /api will 404
+    //EnableWebMvc does not work either
     override fun addViewControllers(registry: ViewControllerRegistry) {
         registry.addRedirectViewController("/api", "/swagger-ui.html")
     }
@@ -22,7 +24,6 @@ class BaseConfiguration : WebMvcConfigurer {
     fun api(): Docket? {
         return Docket(DocumentationType.SWAGGER_2)
             .select()
-            //.apis(RequestHandlerSelectors.withClassAnnotation(RestController::class.java))
             .apis(RequestHandlerSelectors.withClassAnnotation(RestController::class.java))
             .paths(PathSelectors.any())
             .build()
